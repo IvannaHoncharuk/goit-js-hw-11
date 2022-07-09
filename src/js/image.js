@@ -15,7 +15,7 @@ export async function getImage(query) {
     currentQuery = query;
     const response = await axios.get('/api/', {
       params: {
-        key: '28213280-eb811a12977e7e61e372ebe76',
+        key: '28533081-26db0b6a1bdfdf6c0106971fd',
         q: currentQuery,
         image_type: 'photo',
         orientation: 'horizontal',
