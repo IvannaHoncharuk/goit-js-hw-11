@@ -24,7 +24,7 @@ function searchImg(event) {
   }
 
   const { searchQuery } = event.target.elements;
-  currentQuery = searchQuery.value;
+  currentQuery = searchQuery.value.trim();
   if (currentQuery) {
     loadAndRenderImgs();
   } else {
@@ -32,6 +32,8 @@ function searchImg(event) {
     Notify.info('Enter a query');
   }
 }
+
+
 
 function makeImgCard({
   webformatURL,
@@ -98,7 +100,8 @@ function loadAndRenderImgs() {
   }).catch(error => console.log(error));
 }
 
-function hideLoadMoreBtn() {
+  function hideLoadMoreBtn() {
+  
   refs.loadMoreBtn.classList.add('is-hidden');
 }
 
@@ -155,3 +158,4 @@ const observer = new IntersectionObserver(entries => {
 }, options);
 
 observer.observe(document.querySelector('.scroll-guard'));
+
